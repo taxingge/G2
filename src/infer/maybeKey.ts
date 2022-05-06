@@ -8,7 +8,7 @@ const inferStatistic: InferValue['transform'] = (indexedValue, statistic) => {
   const { value } = indexedValue;
   const { key: K } = value;
   if (K !== undefined) return statistic;
-  return [{ type: 'key' }, ...statistic];
+  return [...statistic, { type: 'key' }];
 };
 
 /**

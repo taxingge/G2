@@ -10,7 +10,7 @@ const inferStatistic: InferValue['transform'] = (indexedValue, statistic) => {
   const { value } = indexedValue;
   const { position } = value;
   if (position === undefined) return statistic;
-  return [{ type: 'splitPosition' }, ...statistic];
+  return [...statistic, { type: 'splitPosition' }];
 };
 
 /**

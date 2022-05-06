@@ -14,17 +14,17 @@ const inferStatistic: InferValue['transform'] = (indexedValue, statistic) => {
   }
 
   // StackY need both x and y channel values, so pass value with empty x or y channel.
-  const { index, value } = indexedValue;
+  const { value } = indexedValue;
   const { x: X, y: Y } = value;
   if (X === undefined || Y === undefined) return statistic;
 
   // Group mark index by channel x.
-  const X1 = X.map(firstOf);
-  const groups = Array.from(group(index, (i) => X1[i]).values());
+  // const X1 = X.map(firstOf);
+  // const groups = Array.from(group(index, (i) => X1[i]).values());
 
-  // Every group having sing value means on overlapping, so pass.
-  if (groups.every((d) => d.length <= 1)) return statistic;
-  return [{ type: 'stackY' }, ...statistic];
+  // // Every group having sing value means on overlapping, so pass.
+  // if (groups.every((d) => d.length <= 1)) return statistic;
+  return [...statistic, { type: 'stackY' }];
 };
 
 /**

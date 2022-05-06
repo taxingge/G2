@@ -1,4 +1,5 @@
 import { StatisticComponent } from '../runtime';
+import { Encode } from './encode';
 
 export type Statistic =
   | StackYStatistic
@@ -6,7 +7,9 @@ export type Statistic =
   | StackDurationStatistic
   | SplitPositionStatistic
   | CustomStatistic
-  | KeyStatistic;
+  | KeyStatistic
+  | GroupXStatistic
+  | TitleStatistic;
 
 export type StatisticTypes =
   | 'dodgeX'
@@ -14,6 +17,8 @@ export type StatisticTypes =
   | 'stackEnter'
   | 'splitPosition'
   | 'key'
+  | 'groupX'
+  | 'title'
   | StatisticComponent;
 
 export type DodgeXStatistic = {
@@ -35,6 +40,15 @@ export type SplitPositionStatistic = {
 
 export type KeyStatistic = {
   type?: 'key';
+};
+
+export type GroupXStatistic = {
+  type?: 'groupX';
+  output?: Record<string, string>;
+};
+
+export type TitleStatistic = {
+  type?: 'title';
 };
 
 export type CustomStatistic = {

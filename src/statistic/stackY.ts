@@ -8,6 +8,7 @@ export type StackYOptions = Omit<StackYStatistic, 'type'>;
 /**
  * Group marks into groups and stack y channel.
  *  @todo Sort marks in each groups.
+ *  @todo Handle negative y.
  */
 export const StackY: SC<StackYOptions> = () => {
   return ({ index, value }) => {

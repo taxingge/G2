@@ -48,7 +48,9 @@ Interval.props = {
   infer: [
     ...baseInference(),
     { type: 'maybeZeroX1' },
+    { type: 'maybeZeroY1' },
     { type: 'maybeZeroY2' },
+    { type: 'maybeTooltip' },
     { type: 'maybeStackY' },
   ],
   shapes: ['rect', 'hollowRect'],

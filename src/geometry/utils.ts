@@ -27,6 +27,6 @@ export function baseInference() {
     { type: 'maybeTuple' },
     { type: 'maybeKey' },
     { type: 'maybeTitle' },
-    { type: 'maybeTooltip' },
+    // { type: 'maybeTooltip' },
   ];
 }

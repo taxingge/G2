@@ -45,7 +45,14 @@ import {
   HollowPoint,
   Text,
 } from '../shape';
-import { DodgeX, StackY, StackEnter, SplitPosition, Key } from '../statistic';
+import {
+  DodgeX,
+  StackY,
+  StackEnter,
+  SplitPosition,
+  Key,
+  GroupX,
+} from '../statistic';
 import { Light } from '../theme';
 import {
   Fetch,
@@ -125,6 +132,7 @@ export function createLibrary(): G2Library {
     'statistic.dodgeX': DodgeX,
     'statistic.stackEnter': StackEnter,
     'statistic.splitPosition': SplitPosition,
+    'statistic.groupX': GroupX,
     'statistic.key': Key,
     'theme.light': Light,
     'transform.fetch': Fetch,

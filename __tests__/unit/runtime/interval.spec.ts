@@ -524,6 +524,54 @@ describe('render', () => {
     mount(createDiv(), chart);
   });
 
+  it.only('', (done) => {
+    const chart = render<G2Spec>(
+      {
+        type: 'interval',
+        transform: [
+          {
+            type: 'fetch',
+            url: 'https://gw.alipayobjects.com/os/bmw-prod/4320b4de-b1d4-40ad-951c-aacbd8fd4e02.json',
+          },
+        ],
+        statistic: [{ type: 'groupX', output: { y: 'mean', tooltip: 'mean' } }],
+        // statistic: [{ type: 'groupX'}, {type:'summaryMeanY'}],
+        encode: {
+          x: 'sex',
+          y: 'weight',
+        },
+      },
+      {},
+      done,
+    );
+    mount(createDiv(), chart);
+  });
+
+  it.only('', (done) => {
+    const chart = render<G2Spec>(
+      {
+        type: 'interval',
+        transform: [
+          {
+            type: 'fetch',
+            url: 'https://gw.alipayobjects.com/os/bmw-prod/4320b4de-b1d4-40ad-951c-aacbd8fd4e02.json',
+          },
+        ],
+        statistic: [
+          { type: 'groupX', output: { y: 'count', tooltip: 'count' } },
+        ],
+        encode: {
+          x: 'sex',
+          // tooltip: 'count',
+        },
+      },
+      {},
+      done,
+    );
+
+    mount(createDiv(), chart);
+  });
+
   it('render({...} renders chart with stackY', (done) => {
     const chart = render<G2Spec>(
       {
