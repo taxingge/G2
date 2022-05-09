@@ -1,7 +1,7 @@
 import { Chart } from '@antv/g2';
 
 const data = [
-  { type: '1-3秒', value: 0.16 },
+  { type: '60分以下', value: 0.16 },
   { type: '4-10秒', value: 0.125 },
   { type: '11-30秒', value: 0.24 },
   { type: '31-60秒', value: 0.19 },
